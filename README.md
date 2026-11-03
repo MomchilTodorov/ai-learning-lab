@@ -10,7 +10,7 @@ The aim is to turn what I learn into a working AI application, one feature at a 
 - Current lab: **Build Smarter AI Apps: Empower LLMs with LangChain**.
 - App: a working local prompt preview; connecting a language model is the next step.
 
-The course position comes from the screenshots shared on 3 November 2026. Module completion and understanding are tracked separately in [PROGRESS.md](PROGRESS.md). This repository does not sync automatically with Coursera.
+Module completion and understanding are tracked separately in [PROGRESS.md](PROGRESS.md). This repository does not sync automatically with Coursera.
 
 ## Track the learning
 
