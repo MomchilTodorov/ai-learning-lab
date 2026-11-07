@@ -18,7 +18,11 @@
 
 **Current position:** Starting Module 3. No Module 3 exercises are marked complete here yet.
 
-**Next small task:** Reuse the existing question-and-document validation in a LangChain chat prompt, then connect the formatting steps with LCEL. Inspect the resulting messages before choosing a model provider.
+**Prepared examples:** A reusable `ChatPromptTemplate` and an LCEL pipeline connecting input validation, prompt formatting, and JSON message output. These examples use the existing fictional FAQ and make no model call. They were prepared with AI assistance.
+
+**Checks:** Automated checks exercise template reuse, literal braces and Unicode in source text, input limits, the LCEL pipeline, batching, and command-line errors. The pipeline's local invocation is also checked with socket connections blocked. These checks establish prompt preparation behavior, not AI answer quality.
+
+**Next small task:** Run `python -m app.lcel_preview` with the README arguments in the project environment. Explain what each side of `|` receives and returns. Then record notes from the first Module 3 exercise before choosing a model provider.
 
 **Evidence boundary:** Course completion and quiz results are recorded separately from personally reproducing or explaining the examples in this repository.
 

@@ -8,7 +8,9 @@ This direction is a proposal. It can change without losing the learning log or t
 
 ## What works now
 
-The command-line example reads one UTF-8 `.txt` or `.md` file and produces a JSON message list. It validates empty questions and documents and rejects oversized inputs. The source is separate from the instructions so the prompt can explain how to use it.
+The command-line examples read one UTF-8 `.txt` or `.md` file and produce a JSON message list. They validate empty questions and documents and reject oversized inputs. The source is separate from the instructions so the prompt can explain how to use it.
+
+The original example uses only Python's standard library. The second uses LangChain's `ChatPromptTemplate` and LCEL to connect validation, formatting, and output. Both share the same validation and bounded file reading. See [LANGCHAIN_EXAMPLES.md](LANGCHAIN_EXAMPLES.md) for the runnable walkthrough.
 
 It is a **prompt preview**, not a chatbot. There is no model call, document search, embedding model, vector database, PDF loader, web server, or React interface yet. It sends nothing over the network.
 

@@ -8,7 +8,7 @@ The aim is to turn what I learn into a working AI application, one feature at a 
 
 - Course position: starting **Module 3**.
 - Completed: Module 2, **Introduction to LangChain in GenAI Applications**, including its lab and graded quiz (**100%**).
-- App: a working local prompt preview; connecting a language model is the next step.
+- App: working local prompt previews, including a LangChain/LCEL pipeline; connecting a language model is the next step.
 
 Module completion and understanding are tracked separately in [PROGRESS.md](PROGRESS.md). This repository does not sync automatically with Coursera.
 
@@ -46,6 +46,14 @@ python -m venv .venv
 
 See [docs/LANGCHAIN_EXAMPLES.md](docs/LANGCHAIN_EXAMPLES.md) for the template example and an explanation of the message flow. Formatting a prompt does not generate an answer or call a model provider.
 
+Run the complete LCEL preview with the fictional FAQ:
+
+```powershell
+.\.venv\Scripts\python.exe -m app.lcel_preview --document examples/shop-faq.md --question "How long do I have to return an item?"
+```
+
+This runs `validate input | format chat prompt | preview messages` and prints JSON. It reuses the starter's input limits and keeps the original, dependency-free command available.
+
 ## Files
 
 ```text
@@ -54,14 +62,16 @@ PROGRESS.md                  Course and app checklists
 LEARNING_LOG.md              Dated learning entries and a reusable template
 docs/APP_PLAN.md             App idea, limits, and staged roadmap
 docs/GITHUB_SETUP.md         First push and later study-session commits
-docs/LANGCHAIN_EXAMPLES.md   Reusable chat prompt and explanation
+docs/LANGCHAIN_EXAMPLES.md   Chat prompt, LCEL walkthrough, and practice questions
 app/__init__.py             Makes app an importable Python package
 app/prepare_prompt.py        Validates input and builds a prompt preview
 app/langchain_prompt.py      Reuses validation with ChatPromptTemplate
+app/lcel_preview.py          Connects validation, formatting, and output using LCEL
 requirements.txt             Pinned LangChain core dependency
 examples/shop-faq.md         Original, fictional document for the example
 tests/test_prepare_prompt.py Input and command-line checks
 tests/test_langchain_prompt.py Template boundaries and input checks
+tests/test_lcel_preview.py   End-to-end LCEL, batching, file errors, and CLI checks
 .github/workflows/check.yml Runs the checks on GitHub
 .gitignore                   Keeps local files out of commits
 .gitattributes               Keeps source line endings consistent

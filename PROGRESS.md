@@ -38,6 +38,8 @@ Started on **2026-11-07**. Completed Module 3 exercises have not been recorded y
 
 - [x] Create the project structure, log, and roadmap.
 - [x] Build a local question-and-document prompt preview with input checks.
+- [x] Prepare a reusable LangChain chat prompt using the same input checks.
+- [x] Prepare and test a local LCEL pipeline and command-line preview.
 - [ ] Review and explain the starter code myself.
 - [ ] Confirm the first app's purpose.
 - [ ] Connect one model and display a real answer.
@@ -46,4 +48,4 @@ Started on **2026-11-07**. Completed Module 3 exercises have not been recorded y
 - [ ] Add a simple web interface.
 - [ ] Write a case study with screenshots, limits, and what I learned.
 
-The first two app items describe the prepared starter, not course skills already demonstrated by the learner.
+The completed app items describe code prepared and checked with AI assistance. They do not mark personal review, understanding, or independent reproduction as complete.
