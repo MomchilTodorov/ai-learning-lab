@@ -1,0 +1,2 @@
+# Local prompt formatting and LCEL; no model-provider package is needed yet.
+langchain-core==1.7.6

@@ -44,6 +44,15 @@ def build_messages(question: str, document: str, source_name: str) -> list[dict[
     ]
 
 
+def read_document(path: Path) -> str:
+    """Read a bounded UTF-8 text document for either prompt preview."""
+    if path.suffix.lower() not in {".txt", ".md"}:
+        raise ValueError("Use a UTF-8 .txt or .md file for this first example.")
+    # Read enough to detect an oversized document, without loading the entire file.
+    with path.open(encoding="utf-8-sig") as source:
+        return source.read(MAX_DOCUMENT_CHARS + 1)
+
+
 def main() -> None:
     # Keep non-English questions readable in redirected output on Windows too.
     sys.stdout.reconfigure(encoding="utf-8")
@@ -53,11 +62,7 @@ def main() -> None:
     args = parser.parse_args()
 
     try:
-        if args.document.suffix.lower() not in {".txt", ".md"}:
-            raise ValueError("Use a UTF-8 .txt or .md file for this first example.")
-        # Read only enough text to validate the size, rather than loading an entire large file.
-        with args.document.open(encoding="utf-8-sig") as source:
-            document = source.read(MAX_DOCUMENT_CHARS + 1)
+        document = read_document(args.document)
         messages = build_messages(args.question, document, args.document.name)
     except (OSError, UnicodeError, ValueError) as error:
         parser.error(str(error))
