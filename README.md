@@ -6,8 +6,8 @@ The aim is to turn what I learn into a working AI application, one feature at a 
 
 ## Current stage
 
-- Course position: Module 2, **Introduction to LangChain in GenAI Applications**.
-- Current lab: **Build Smarter AI Apps: Empower LLMs with LangChain**.
+- Course position: starting **Module 3**.
+- Completed: Module 2, **Introduction to LangChain in GenAI Applications**, including its lab and graded quiz (**100%**).
 - App: a working local prompt preview; connecting a language model is the next step.
 
 Module completion and understanding are tracked separately in [PROGRESS.md](PROGRESS.md). This repository does not sync automatically with Coursera.

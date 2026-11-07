@@ -1,6 +1,6 @@
 # Progress
 
-Last recorded position: **Module 2**, based on screenshots shared on **2026-11-03**.
+Last recorded position: **starting Module 3**, updated on **2026-11-07**.
 
 An unchecked item means it has not been recorded here yet. It does not mean the lesson has not been watched. Module 1 and overall course completion have not been confirmed.
 
@@ -15,17 +15,19 @@ An unchecked item means it has not been recorded here yet. It does not mean the 
 
 ### Module 2: Introduction to LangChain in GenAI Applications
 
-Current lab: **Build Smarter AI Apps: Empower LLMs with LangChain**.
+Completed on Coursera: the core concepts and chains/agents lessons, the optional LCEL lesson, **Build Smarter AI Apps: Empower LLMs with LangChain**, and the module summary and cheat sheet.
+
+Recorded assessment results: **100%** on the core-components practice quiz and **100%** on the module's graded quiz. These results record course progress; the independent practice items below remain separate.
 
 - [ ] Summarize the lab in my own words after working through it.
 - [ ] Run and explain a small LangChain chain outside the provided notebook.
 - [ ] Explain what retrieval adds to a model's answer.
 - [ ] Record one problem I encountered and how I investigated it.
-- [ ] Confirm module completion on Coursera.
+- [x] Confirm module completion on Coursera.
 
 ### Module 3: Build a Generative AI Application with LangChain
 
-Progress in this module has not been recorded yet.
+Started on **2026-11-07**. Completed Module 3 exercises have not been recorded yet.
 
 - [ ] Connect a user input to a Python web endpoint.
 - [ ] Try structured JSON output and check that it can be parsed.

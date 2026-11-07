@@ -10,6 +10,18 @@
 
 **Next small task:** Read `app/prepare_prompt.py`, run the example, and explain the difference between the system message, the question, and the source document.
 
+## 2026-11-07 — Module 2 complete; starting Module 3
+
+**Course progress:** Completed Module 2, Introduction to LangChain in GenAI Applications. The recorded activities include the core-concepts and chains/agents lessons, the optional LCEL lesson, the LangChain lab, and the module summary and cheat sheet.
+
+**Assessment results:** 100% on the core-components practice quiz and 100% on the module's graded quiz.
+
+**Current position:** Starting Module 3. No Module 3 exercises are marked complete here yet.
+
+**Next small task:** Reuse the existing question-and-document validation in a LangChain chat prompt, then connect the formatting steps with LCEL. Inspect the resulting messages before choosing a model provider.
+
+**Evidence boundary:** Course completion and quiz results are recorded separately from personally reproducing or explaining the examples in this repository.
+
 ## Entry template
 
 Copy this section after a study session and fill it in with what actually happened.
