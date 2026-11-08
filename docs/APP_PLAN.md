@@ -12,7 +12,7 @@ The command-line examples read one UTF-8 `.txt` or `.md` file and produce a JSON
 
 The original example uses only Python's standard library. The second uses LangChain's `ChatPromptTemplate` and LCEL to connect validation, formatting, and output. Both share the same validation and bounded file reading. See [LANGCHAIN_EXAMPLES.md](LANGCHAIN_EXAMPLES.md) for the runnable walkthrough.
 
-A local Flask application exposes the same LCEL preview through `POST /api/preview`. It checks the JSON field types and applies the shared input limits before returning prepared messages. Start it using the command in the README.
+A local Flask application exposes the same LCEL preview through `POST /api/preview`. It checks the JSON field types and applies the shared input limits before returning prepared messages. Its browser form lets you edit the question and document, inspect the JSON output, and correct validation errors. Start it using the command in the README.
 
 The next stage is a model integration that can turn those messages into an answer. Retrieval, embedding models, PDF loading, and a React interface remain later milestones.
 
@@ -23,7 +23,7 @@ The next stage is a model integration that can turn those messages into an answe
 3. **Try a few questions.** Record the question, expected source, actual answer, and whether the answer is supported. Include a question the document cannot answer.
 4. **Add retrieval with LangChain.** Split longer documents into passages, retrieve useful passages, and send only those to the model. Add embeddings and a vector store when there is enough content to need them.
 5. **Extend the Python web endpoint.** The Flask preview endpoint is available. Connect it to the chosen model when that integration is ready.
-6. **Add an interface.** Start with a simple form. React can come next and build on the skills used in the portfolio.
+6. **Extend the interface.** The local preview form is available. Add answer and source displays alongside the chosen model integration. React can come next and build on the skills used in the portfolio.
 7. **Explore WordPress integration.** Read published content through the WordPress REST API or embed the assistant after the standalone version works.
 
 For the future version, the data flow would be:

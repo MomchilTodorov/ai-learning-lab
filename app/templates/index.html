@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document prompt preview | AI Learning Lab</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f4f6fa; color: #18243c; font-family: system-ui, sans-serif; }
+    main { max-width: 1160px; margin: auto; padding: 40px 24px; }
+    header { margin-bottom: 28px; }
+    .eyebrow { color: #355cb7; font-size: .8rem; font-weight: 700; letter-spacing: .1em; }
+    h1 { margin: 10px 0; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.04em; }
+    h2 { margin: 0 0 20px; font-size: 1.2rem; }
+    p { line-height: 1.6; }
+    .intro, .hint { color: #536079; }
+    .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    .panel { background: white; border: 1px solid #dce2ec; border-radius: 12px; padding: 24px; }
+    label { display: block; margin: 20px 0 8px; font-size: .9rem; font-weight: 650; }
+    input, textarea { width: 100%; border: 1px solid #aeb9cd; border-radius: 6px; padding: 12px; font: inherit; color: inherit; }
+    textarea { min-height: 270px; resize: vertical; line-height: 1.5; }
+    input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid #abc2ff; outline-offset: 2px; }
+    button { border: 0; border-radius: 6px; padding: 13px 20px; margin-top: 20px; background: #244fc0; color: white; font: inherit; font-weight: 650; cursor: pointer; }
+    button:hover { background: #183a92; }
+    button:disabled { opacity: .65; cursor: wait; }
+    .hint { font-size: .85rem; }
+    #status { min-height: 1.5em; margin-bottom: 0; }
+    pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .85rem; line-height: 1.65; }
+    @media (max-width: 760px) { .columns { grid-template-columns: 1fr; } main { padding: 24px 16px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">AI LEARNING LAB</div>
+      <h1>Document prompt preview</h1>
+      <p class="intro">Prepare a question and its source for your first model call.</p>
+    </header>
+    <div class="columns">
+      <section class="panel" aria-labelledby="input-heading">
+        <h2 id="input-heading">Try a question</h2>
+        <form id="preview-form" action="{{ url_for('preview') }}" method="post">
+          <label for="question">Question</label>
+          <input id="question" name="question" required maxlength="{{ max_question_chars }}" value="How long do I have to return an item?">
+          <label for="source-name">Source name</label>
+          <input id="source-name" name="source_name" required value="shop-faq.md">
+          <label for="document">Source document</label>
+          <textarea id="document" name="document" required maxlength="{{ max_document_chars }}" aria-describedby="document-hint">{{ example_document }}</textarea>
+          <p class="hint" id="document-hint">The example shop and policies are fictional. You can edit this text, up to {{ max_document_chars }} characters.</p>
+          <button type="submit">Preview messages</button>
+          <p id="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="panel" aria-labelledby="output-heading">
+        <h2 id="output-heading">Prepared messages</h2>
+        <p class="hint">Inspect the instructions, question, and source that the app prepares. Connecting an AI model is the next step.</p>
+        <p id="empty-state" class="hint">Submit the form to see the prompt preview here.</p>
+        <pre id="preview-output" tabindex="0" aria-label="Prompt preview JSON" hidden></pre>
+      </section>
+    </div>
+  </main>
+  <script>
+    const form = document.getElementById("preview-form");
+    const button = form.querySelector("button");
+    const status = document.getElementById("status");
+    const output = document.getElementById("preview-output");
+    const emptyState = document.getElementById("empty-state");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      output.hidden = true;
+      emptyState.hidden = false;
+      status.textContent = "Preparing messages…";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const preview = await response.json();
+        if (!response.ok) {
+          throw new Error(preview.error || "Unable to prepare the preview.");
+        }
+        output.textContent = JSON.stringify(preview, null, 2);
+        output.hidden = false;
+        emptyState.hidden = true;
+        status.textContent = "Prompt ready.";
+      } catch (error) {
+        status.textContent = error.message;
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

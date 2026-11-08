@@ -35,6 +35,26 @@ class WebPreviewTests(unittest.TestCase):
             ),
         )
 
+    def test_browser_form_loads_the_fictional_faq_and_api_address(self):
+        response = self.client.get("/")
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn('action="/api/preview"', html)
+        self.assertIn('name="question"', html)
+        self.assertIn('name="document"', html)
+        self.assertIn('name="source_name"', html)
+        self.assertIn("30 days of delivery", html)
+        self.assertIn(f'maxlength="{MAX_DOCUMENT_CHARS}"', html)
+
+    def test_source_content_is_escaped_inside_the_browser_form(self):
+        source = '</textarea><script>alert("source")</script>'
+        with patch("app.web.read_document", return_value=source):
+            response = self.client.get("/")
+
+        html = response.get_data(as_text=True)
+        self.assertNotIn(source, html)
+        self.assertIn("&lt;/textarea&gt;&lt;script&gt;", html)
+
     def test_existing_validation_is_enforced_at_the_http_boundary(self):
         cases = [
             ("question", " "),

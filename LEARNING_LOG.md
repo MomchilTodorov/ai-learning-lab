@@ -36,6 +36,10 @@
 
 **Starting checks:** All 13 existing Python tests pass locally. The working tree matches GitHub's `main` before today's changes.
 
+**Prepared with AI assistance:** A Flask application factory, a JSON endpoint around the existing LCEL preview, and a browser form seeded with the fictional shop FAQ. The form sends editable inputs to the endpoint and displays the prepared messages or a validation error.
+
+**Checks after implementation:** All 21 Python tests pass. They cover HTTP input types, malformed and oversized requests, Unicode, input limits, independent requests, form rendering, and HTML escaping. The browser JavaScript passes Node's syntax check. An interactive browser check is a remaining manual step.
+
 **Next small task:** Launch the local browser form, inspect the prepared messages, then use the course lab to choose the first model configuration.
 
 ## Entry template

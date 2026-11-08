@@ -1,8 +1,11 @@
 """Serve the validated LCEL prompt preview through a local Flask application."""
 
-from flask import Flask, jsonify, request
+from pathlib import Path
+
+from flask import Flask, jsonify, render_template, request
 
 from app.lcel_preview import create_preview_chain
+from app.prepare_prompt import MAX_DOCUMENT_CHARS, MAX_QUESTION_CHARS, read_document
 
 
 def create_app() -> Flask:
@@ -10,6 +13,16 @@ def create_app() -> Flask:
     app = Flask(__name__)
     app.config["MAX_CONTENT_LENGTH"] = 256_000
     preview_chain = create_preview_chain()
+
+    @app.get("/")
+    def index():
+        example_path = Path(__file__).resolve().parents[1] / "examples" / "shop-faq.md"
+        return render_template(
+            "index.html",
+            example_document=read_document(example_path),
+            max_question_chars=MAX_QUESTION_CHARS,
+            max_document_chars=MAX_DOCUMENT_CHARS,
+        )
 
     @app.post("/api/preview")
     def preview():

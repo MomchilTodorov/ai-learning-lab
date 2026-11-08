@@ -46,7 +46,7 @@ Started on **2026-11-07**. On **2026-11-08**, the course is at **Hands-on with G
 - [ ] Connect one model and display a real answer.
 - [ ] Add document retrieval and source references.
 - [ ] Try a small set of questions, including an answer missing from the documents.
-- [ ] Add a simple web interface.
+- [x] Add a local browser form for question-and-document prompt previews.
 - [ ] Write a case study with screenshots, limits, and what I learned.
 
 The completed app items describe code prepared and checked with AI assistance. They do not mark personal review, understanding, or independent reproduction as complete.
