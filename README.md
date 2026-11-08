@@ -8,7 +8,7 @@ The aim is to turn what I learn into a working AI application, one feature at a 
 
 - Course position: preparing the **Module 3 application lab**, **Hands-on with GenAI: Choosing the Right Model for Your Application**.
 - Completed: Module 2, **Introduction to LangChain in GenAI Applications**, including its lab and graded quiz (**100%**).
-- App: working local prompt previews, including a LangChain/LCEL pipeline; connecting a language model is the next step.
+- App: local prompt previews through the command line and a Flask JSON endpoint. Connecting a language model is the next step.
 
 Module completion and understanding are tracked separately in [PROGRESS.md](PROGRESS.md). This repository does not sync automatically with Coursera.
 
@@ -54,6 +54,27 @@ Run the complete LCEL preview with the fictional FAQ:
 
 This runs `validate input | format chat prompt | preview messages` and prints JSON. It reuses the starter's input limits and keeps the original, dependency-free command available.
 
+## Run the local Flask endpoint
+
+Install the requirements in the project environment, then start the server from the repository folder:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m flask --app app.web run
+```
+
+The server listens at `http://127.0.0.1:5000`. Send a JSON object to `POST /api/preview` with these fields:
+
+```json
+{
+  "question": "How long do I have to return an item?",
+  "document": "Unused items can be returned within 30 days of delivery.",
+  "source_name": "example.md"
+}
+```
+
+The response contains the same `mode` and `messages` fields as the LCEL command-line preview. The endpoint applies the existing question and document limits and returns JSON errors for invalid requests.
+
 ## Files
 
 ```text
@@ -67,11 +88,13 @@ app/__init__.py             Makes app an importable Python package
 app/prepare_prompt.py        Validates input and builds a prompt preview
 app/langchain_prompt.py      Reuses validation with ChatPromptTemplate
 app/lcel_preview.py          Connects validation, formatting, and output using LCEL
-requirements.txt             Pinned LangChain core dependency
+app/web.py                   Flask application factory and JSON preview endpoint
+requirements.txt             Pinned LangChain core and Flask dependencies
 examples/shop-faq.md         Original, fictional document for the example
 tests/test_prepare_prompt.py Input and command-line checks
 tests/test_langchain_prompt.py Template boundaries and input checks
 tests/test_lcel_preview.py   End-to-end LCEL, batching, file errors, and CLI checks
+tests/test_web.py            HTTP validation and prompt preview checks
 .github/workflows/check.yml Runs the checks on GitHub
 .gitignore                   Keeps local files out of commits
 .gitattributes               Keeps source line endings consistent

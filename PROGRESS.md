@@ -40,6 +40,7 @@ Started on **2026-11-07**. On **2026-11-08**, the course is at **Hands-on with G
 - [x] Build a local question-and-document prompt preview with input checks.
 - [x] Prepare a reusable LangChain chat prompt using the same input checks.
 - [x] Prepare and test a local LCEL pipeline and command-line preview.
+- [x] Expose the validated LCEL preview through a local Flask JSON endpoint.
 - [ ] Review and explain the starter code myself.
 - [ ] Confirm the first app's purpose.
 - [ ] Connect one model and display a real answer.

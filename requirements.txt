@@ -1,2 +1,3 @@
-# Local prompt formatting and LCEL; no model-provider package is needed yet.
+# Local prompt formatting and the Flask web application.
 langchain-core==1.7.6
+Flask==3.1.3
