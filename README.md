@@ -6,7 +6,7 @@ The aim is to turn what I learn into a working AI application, one feature at a 
 
 ## Current stage
 
-- Course position: starting **Module 3**.
+- Course position: preparing the **Module 3 application lab**, **Hands-on with GenAI: Choosing the Right Model for Your Application**.
 - Completed: Module 2, **Introduction to LangChain in GenAI Applications**, including its lab and graded quiz (**100%**).
 - App: working local prompt previews, including a LangChain/LCEL pipeline; connecting a language model is the next step.
 

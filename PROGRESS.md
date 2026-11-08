@@ -1,6 +1,6 @@
 # Progress
 
-Last recorded position: **starting Module 3**, updated on **2026-11-07**.
+Last recorded position: **preparing the Module 3 application lab**, updated on **2026-11-08**.
 
 An unchecked item means it has not been recorded here yet. It does not mean the lesson has not been watched. Module 1 and overall course completion have not been confirmed.
 
@@ -27,7 +27,7 @@ Recorded assessment results: **100%** on the core-components practice quiz and *
 
 ### Module 3: Build a Generative AI Application with LangChain
 
-Started on **2026-11-07**. Completed Module 3 exercises have not been recorded yet.
+Started on **2026-11-07**. On **2026-11-08**, the course is at **Hands-on with GenAI: Choosing the Right Model for Your Application**. The Flask reading and Flask development cheat sheet are marked complete in the course sidebar.
 
 - [ ] Connect a user input to a Python web endpoint.
 - [ ] Try structured JSON output and check that it can be parsed.

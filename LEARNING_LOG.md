@@ -26,6 +26,18 @@
 
 **Evidence boundary:** Course completion and quiz results are recorded separately from personally reproducing or explaining the examples in this repository.
 
+## 2026-11-08 — Preparing the application lab
+
+**Course position:** Module 3, at Hands-on with GenAI: Choosing the Right Model for Your Application. The course sidebar marks the Flask reading and development cheat sheet complete.
+
+**Troubleshooting from the notebook work:** A `NameError` requires checking which setup cell defines or imports the missing name. Run that cell in the current kernel before invoking the chain. Match the model variable used by the setup, such as `llm`, throughout later examples. Use `%pip install chromadb` in a notebook cell to install into its active Python environment.
+
+**App preparation:** Build on the existing question-and-document LCEL preview by adding a Flask endpoint and a browser form. The existing fictional shop FAQ supplies a small example for checking the request and response flow.
+
+**Starting checks:** All 13 existing Python tests pass locally. The working tree matches GitHub's `main` before today's changes.
+
+**Next small task:** Launch the local browser form, inspect the prepared messages, then use the course lab to choose the first model configuration.
+
 ## Entry template
 
 Copy this section after a study session and fill it in with what actually happened.
