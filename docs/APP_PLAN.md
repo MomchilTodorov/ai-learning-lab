@@ -6,6 +6,12 @@ Give the app a small document, ask a question, and receive an answer that refers
 
 This direction is a proposal. It can change without losing the learning log or the prompt-building example.
 
+## Course lab completed
+
+The course was completed on **2026-11-10**. Its final guided project covers a Flask GenAI backend, Llama, Granite, and Mistral through IBM watsonx.ai, and structured JSON responses with LangChain. The schema-extension exercise adds a support representative's `next_step` alongside `summary`, `sentiment`, and `response`.
+
+These are useful patterns for the document app's next stage: separate model configuration from HTTP handling, define the response structure, and check behavior with different inputs. The Cloud IDE lab remains separate from the local implementation described below. See the [completion entry](../LEARNING_LOG.md#2026-11-10--course-complete-and-final-application-lab).
+
 ## What works now
 
 The command-line examples read one UTF-8 `.txt` or `.md` file and produce a JSON message list. They validate empty questions and documents and reject oversized inputs. The source is separate from the instructions so the prompt can explain how to use it.

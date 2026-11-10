@@ -1,16 +1,17 @@
 # AI Learning Lab
 
-Momchil Todorov's learning log and small experiments while working through IBM's [Develop Generative AI Applications: Get Started](https://www.coursera.org/learn/develop-generative-ai-applications-get-started).
+Momchil Todorov's learning log and small experiments from IBM's [Develop Generative AI Applications: Get Started](https://www.coursera.org/learn/develop-generative-ai-applications-get-started), completed on **2026-11-10**.
 
 The aim is to turn what I learn into a working AI application, one feature at a time.
 
 ## Current stage
 
-- Course position: preparing the **Module 3 application lab**, **Hands-on with GenAI: Choosing the Right Model for Your Application**.
-- Completed: Module 2, **Introduction to LangChain in GenAI Applications**, including its lab and graded quiz (**100%**).
-- App: local prompt previews through the command line, a Flask JSON endpoint, and a browser form. Connecting a language model is the next step.
+- Course: **completed**, including the Module 3 application lab, **Hands-on with GenAI: Choosing the Right Model for Your Application**.
+- Final guided project: a Flask GenAI backend using IBM watsonx.ai, Llama, Granite, and Mistral, with LangChain and structured JSON responses.
+- Recorded assessment: **100%** on Module 2's graded quiz. No additional assessment scores are recorded here.
+- Repository app: local prompt previews through the command line, a Flask JSON endpoint, and a browser form. Connecting a language model to this app is the next step.
 
-Module completion and understanding are tracked separately in [PROGRESS.md](PROGRESS.md). This repository does not sync automatically with Coursera.
+See the [completion entry](LEARNING_LOG.md#2026-11-10--course-complete-and-final-application-lab) and [guided-project conclusion screenshot](docs/images/2026-11-10-guided-project-conclusion.png). Course completion, independent practice, and repository app milestones are tracked separately in [PROGRESS.md](PROGRESS.md). This repository does not sync automatically with Coursera.
 
 ## Track the learning
 

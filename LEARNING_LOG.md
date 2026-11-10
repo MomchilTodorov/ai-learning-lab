@@ -42,6 +42,22 @@
 
 **Next small task:** Launch the local browser form, inspect the prepared messages, then use the course lab to choose the first model configuration.
 
+## 2026-11-10 — Course complete and final application lab
+
+**Course progress:** Completed IBM's [Develop Generative AI Applications: Get Started](https://www.coursera.org/learn/develop-generative-ai-applications-get-started), as reported after finishing the final guided project. The previous Module 3 preparation status is now complete.
+
+**Final guided project:** Hands-on with GenAI: Choosing the Right Model for Your Application. The project covers a Flask GenAI backend, IBM watsonx.ai model integration, and comparing Llama, Granite, and Mistral. Its modular structure separates configuration, model setup, and Flask request handling.
+
+**Structured responses:** The model code uses LangChain's `ChatWatsonx`, prompt templates, and `JsonOutputParser` with a Pydantic `AIResponse` schema. The original fields are `summary`, `sentiment` (0–100), and `response`. The JSON-structure exercise discussed here extends the schema with `next_step`, a concrete action for the support representative, and updates the system prompt to request it.
+
+**Request flow reviewed:** A JSON message reaches Flask's `POST /generate` endpoint, is passed to a model-specific response function, and returns as parsed JSON. Testing the schema change involves different customer messages and checking for all four fields, rather than only starting the server.
+
+**Evidence:** The [guided-project conclusion screenshot](docs/images/2026-11-10-guided-project-conclusion.png) records the lab's conclusion and key takeaways. The model code and JSON-structure exercise were also shared during the session. No new quiz score or certificate is recorded in this update.
+
+**Repository status:** This update records completion and learning notes. The final Cloud IDE source files have not been imported into this repository. The local question-and-document app still prepares prompt previews; its real model integration remains an app milestone.
+
+**Next small task:** Connect one model to the local document app using credentials from environment configuration. Try a question answered by the fictional FAQ and one whose answer is absent, then record the actual responses and their limits.
+
 ## Entry template
 
 Copy this section after a study session and fill it in with what actually happened.

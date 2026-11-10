@@ -1,14 +1,14 @@
 # Progress
 
-Last recorded position: **preparing the Module 3 application lab**, updated on **2026-11-08**.
+Last recorded position: **course completed**, updated on **2026-11-10**.
 
-An unchecked item means it has not been recorded here yet. It does not mean the lesson has not been watched. Module 1 and overall course completion have not been confirmed.
+Completion of **Develop Generative AI Applications: Get Started** was reported on 2026-11-10, with a [screenshot of the final guided-project conclusion](docs/images/2026-11-10-guided-project-conclusion.png). An unchecked independent-practice item means that activity has not been recorded here yet; it does not undo course completion.
 
 ## Course practice
 
 ### Module 1: Foundations of Generative AI and Prompt Engineering
 
-- [ ] Confirm module completion on Coursera.
+- [x] Confirm module completion on Coursera as part of the reported course completion.
 - [ ] Explain a prompt template in my own words.
 - [ ] Write an original example comparing two prompts with the same input.
 - [ ] Record what changed in the output and why it might have changed.
@@ -27,12 +27,16 @@ Recorded assessment results: **100%** on the core-components practice quiz and *
 
 ### Module 3: Build a Generative AI Application with LangChain
 
-Started on **2026-11-07**. On **2026-11-08**, the course is at **Hands-on with GenAI: Choosing the Right Model for Your Application**. The Flask reading and Flask development cheat sheet are marked complete in the course sidebar.
+Started on **2026-11-07** and completed with the course on **2026-11-10**. The final guided project, **Hands-on with GenAI: Choosing the Right Model for Your Application**, covers a Flask backend, IBM watsonx.ai model integration, and structured JSON responses.
 
-- [ ] Connect a user input to a Python web endpoint.
-- [ ] Try structured JSON output and check that it can be parsed.
-- [ ] Compare two available model configurations on the same questions.
-- [ ] Confirm module completion on Coursera.
+The completed items below refer to the reported course-lab work. The repository's own app is tracked separately below.
+
+- [x] Complete the course lab's user-input and Flask endpoint work.
+- [x] Complete the course lab's structured JSON output practice with `JsonOutputParser` and a Pydantic schema.
+- [x] Complete the course lab covering integration and comparison of Llama, Granite, and Mistral.
+- [x] Confirm module completion on Coursera as part of the reported course completion.
+
+The JSON-structure exercise discussed in this lab adds a `next_step` field to `AIResponse` and updates the system prompt to recommend a support representative's next action. See the [learning log](LEARNING_LOG.md#2026-11-10--course-complete-and-final-application-lab).
 
 ## App milestones
 
